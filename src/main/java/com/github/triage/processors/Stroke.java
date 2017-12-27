@@ -3,9 +3,9 @@ package com.github.triage.processors;
 import java.io.Serializable;
 
 import com.github.triage.domain.Human;
-import com.github.triage.domain.Trauma;
+import com.github.triage.domain.Traumable;
 
-public class Stroke implements Trauma, Serializable {
+public class Stroke implements Traumable, Serializable {
 
 	private static final long serialVersionUID = 1L;
 

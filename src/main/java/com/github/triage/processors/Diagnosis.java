@@ -1,7 +1,7 @@
 package com.github.triage.processors;
 
 import com.github.triage.domain.Human;
-import com.github.triage.domain.Trauma;
+import com.github.triage.domain.Traumable;
 
 public class Diagnosis {
 
@@ -13,7 +13,7 @@ public class Diagnosis {
 
 	public String makeDiagnosis() {
 		StringBuilder diagnosis = new StringBuilder();
-		for (Trauma trauma : human.getTraumasList()) {
+		for (Traumable trauma : human.getTraumasList()) {
 			human = trauma.process(human);
 		}
 		if (human.getHealth() == 1000) {

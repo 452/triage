@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.triage.domain.Human;
 import com.github.triage.domain.rest.Response;
+import com.github.triage.processors.CutOfFinger;
 import com.github.triage.processors.Stroke;
 
 import io.swagger.annotations.Api;
@@ -32,7 +33,9 @@ public class TriageController {
 		Human human = new Human();
 		human.setFullName("Harry Potter");
 		human.setHealth(1000);
+		human.setBlood(100);
 		human.addTraumas(new Stroke());
+		human.addTraumas(new CutOfFinger());
 		return human;
 	}
 

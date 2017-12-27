@@ -10,7 +10,8 @@ public class Human {
 
 	private String fullName;
 	private int health;
-	private List<Trauma> traumas = new LinkedList<Trauma>();
+	private double blood;
+	private List<Traumable> traumas = new LinkedList<Traumable>();
 	private List<String> healthHistory = new LinkedList<String>();
 
 	public String getFullName() {
@@ -29,19 +30,28 @@ public class Human {
 		this.health = health;
 	}
 
+	public double getBlood() {
+		return blood;
+	}
+
+	public void setBlood(double blood) {
+		this.blood = blood;
+	}
+
 	public Human clone() {
 		Human human = new Human();
 		human.setFullName(this.fullName);
 		human.setHealth(this.health);
+		human.setBlood(this.blood);
 		return human;
 	}
 
-	public void addTraumas(Trauma trauma) {
+	public void addTraumas(Traumable trauma) {
 		traumas.add(trauma);
 	}
 
 	@JsonIgnore
-	public List<Trauma> getTraumasList() {
+	public List<Traumable> getTraumasList() {
 		return traumas;
 	}
 
